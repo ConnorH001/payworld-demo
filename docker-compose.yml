@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: your_pg_password
+      POSTGRES_DB: payworld_db
+    ports:
+      - '5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    depends_on:
+      - db
+    environment:
+      DB_HOST: localhost
+      DB_PORT: 5432
+      DB_USERNAME: postgres
+      DB_PASSWORD: terriblepassword
+      DB_NAME: payworld_db
+      JWT_SECRET: ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb
+      JWT_EXPIRATION: 3600s
+    ports:
+      - '8080:8080'
+
+  frontend:
+    build:
+      context: ./pay-world_frontend
+      dockerfile: Dockerfile.frontend
+    depends_on:
+      - backend
+    environment:
+      REACT_APP_API_URL: http://localhost:8080/
+    ports:
+      - '3000:3000'
+
+volumes:
+  pgdata:

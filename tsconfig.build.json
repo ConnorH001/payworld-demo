@@ -1,0 +1,10 @@
+{
+	"extends": "./tsconfig.json",
+	"exclude": [
+		"node_modules",
+		"test",
+		"dist",
+		"pay-world_frontend",
+		"**/*spec.ts"
+	]
+}
