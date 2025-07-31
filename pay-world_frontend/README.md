@@ -9,6 +9,7 @@
 
 This is not intended for any actual production use and is not setup to be - this is purely a demonstration
 ---
+
  
 
 ## Features
@@ -64,6 +65,20 @@ graph LR
   BE -- TypeORM --> PG[(PostgreSQL)]
 ```
 
+## Screenshots
+
+Login Page
+<img width="1363" height="1063" alt="login" src="https://github.com/user-attachments/assets/7ff456a4-dd2b-4bf2-9d04-13727d1e3d10" />
+
+Home Page
+<img width="1358" height="1070" alt="home" src="https://github.com/user-attachments/assets/0defc0da-6343-4ab8-9920-2be3ec8c6b93" />
+
+See Account's Payments
+<img width="1381" height="1063" alt="payments" src="https://github.com/user-attachments/assets/b5d82dab-d1af-4bc1-bba2-8695421e41e3" />
+
+Edit Account
+<img width="1368" height="1063" alt="editaccount" src="https://github.com/user-attachments/assets/f7297a0c-9dfa-4966-b032-7491170fd71d" />
+
 
 Installation
 
@@ -75,9 +90,11 @@ cd pay-world_api
 npm install
 
 Environment Variables
-Create a .env file in the project root with:
+
 
 # Backend
+Create a .env file in the project root with:
+
 DB_HOST=localhost
 DB_PORT=5432
 DB_USERNAME=postgres
@@ -104,16 +121,18 @@ Frontend: http://localhost:3000
 
 Backend: http://localhost:8080/
 
-npm start uses concurrently to launch both servers in one shot.
+`npm start` uses concurrently to launch both servers in one shot.
 
 
 (side note: i have added docker ymls but couldnt get this running locally yet)
 
 
 
+
+
 Usage
 
-Open the frontend in your browser.
+Open the frontend in your browser. (localhost:3000)
 
 Register or log in (demo credentials allowed).
 
@@ -132,11 +151,11 @@ To log out simply click the button on the top right .
 Those not signed in are redirected to the login page
 
 
-Screenshots
+
 
 
 License & Disclaimer
-This project is strictly for practice and demonstration. Feel free to clone, tinker, and learn—but do not use in production.
+This project is strictly for practice and demonstration. Feel free to clone and tinker but do not use in production.
 
 
 Credits 
