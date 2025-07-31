@@ -7,25 +7,9 @@
 
 > A full-stack demo for managing organizations, accounts & payments—built with NestJS, TypeORM, PostgreSQL, React, React Router & MUI.
 
+This is not intended for any actual production use and is not setup to be - this is purely a demonstration
 ---
-
-## Table of Contents
-
-1. [Features](#features)  
-2. [Tech Stack](#tech-stack)  
-3. [Architecture Diagram](#architecture-diagram)  
-4. [Getting Started](#getting-started)  
-   - [Prerequisites](#prerequisites)  
-   - [Installation](#installation)  
-   - [Environment Variables](#environment-variables)  
-   - [Database Setup](#database-setup)  
-   - [Running the App](#running-the-app)  
-5. [API Endpoints](#api-endpoints)  
-6. [Usage](#usage)  
-7. [Screenshots](#screenshots)  
-8. [License & Disclaimer](#license--disclaimer)  
-
----
+ 
 
 ## Features
 
@@ -78,14 +62,8 @@ graph LR
   FE -- axios --> AccC
   FE -- axios --> PayC
   BE -- TypeORM --> PG[(PostgreSQL)]
+```
 
-
-Getting Started
-
-Prerequisites
-Node.js ≥ 16.x, npm ≥ 8.x
-
-PostgreSQL ≥ 12.x
 
 Installation
 
@@ -113,9 +91,10 @@ Ensure PostgreSQL is running locally.
 
 Create a database:
 
-psql -U postgres -c "CREATE DATABASE payworld_demo;"
+psql -U postgres -c "CREATE DATABASE payworld_db;"
 
-Running the App
+
+Running the App (run this at the root of the project)
 
 npm start
 
@@ -128,22 +107,29 @@ Backend: http://localhost:8080/
 npm start uses concurrently to launch both servers in one shot.
 
 
+(side note: i have added docker ymls but couldnt get this running locally yet)
+
 
 
 Usage
+
 Open the frontend in your browser.
 
 Register or log in (demo credentials allowed).
 
 Create an organization account.
 
-Add one or more bank/payment accounts.
+Add one or more Mock bank/payment accounts.
 
-Click into an account to view/add/edit payments.
+Click into an account to view/add/approve payments.
 
 Watch your JWT expire after inactivity and re-login.
 
 All interactions happen on the homepage via intuitive dialogs.
+
+To log out simply click the button on the top right . 
+
+Those not signed in are redirected to the login page
 
 
 Screenshots
